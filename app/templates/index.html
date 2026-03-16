@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Metro Departures</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+
+<h2>Tomas Reseplanerare</h2>
+
+<form method="POST">
+
+<label>Metro Line:</label>
+<input type="text" name="line" placeholder="Example: 14" required>
+
+<br><br>
+
+<label>Direction:</label>
+<select name="direction" required>
+    <option value="">Select direction</option>
+    <option value="1">North</option>
+    <option value="2">South</option>
+</select>
+
+<br><br>
+
+<button type="submit">Search</button>
+
+</form>
+
+<br><br>
+
+{% if departures %}
+
+<h3>Results</h3>
+
+<table>
+
+<tr>
+<th>Destination</th>
+<th>Departure</th>
+</tr>
+
+{% for dep in departures %}
+
+<tr>
+<td>{{ dep.destination }}</td>
+<td>{{ dep.display }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+</body>
+</html>

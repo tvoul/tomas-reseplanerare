@@ -10,8 +10,7 @@
 ## Hint
 ### Kör igång applikationen
 * pip install -r requirements.txt
-* cd app
-* py frontend.py (obs, kan variera beroende på hur python anropas - t ex: py, python3, py3)
+* py app/frontend.py (obs, kan variera beroende på hur python anropas - t ex: py, python3, py3)
 
 ### Bygg och starta en container
 * docker build -t tomas-reseplanerare . 
